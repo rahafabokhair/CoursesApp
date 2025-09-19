@@ -1,0 +1,53 @@
+<section class="login-bg">
+  <div class="container">
+    <div class="col-md-12 mt-4 boldf white tcenter">
+      <h4>تسجيل الدخول</h4>
+      <p>أهلاً وسهلاً بك في مدرسة الفاتح الالكترونية</p>
+    </div>
+    <div class="container tcenter main-cont">
+      <div class="col-md-6 mt-4 second-cont m-auto">
+        <div class="col-md-10 m-auto">
+        
+          <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && onLogin(loginForm)">
+            <div class="form-group first t-right col_w">
+              <label for="username"> الاسم </label>
+              <input
+                dir="rtl"
+                class="form-control me-2"
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+                ngModel
+                required
+              />
+            </div>
+            <div class="form-group last mb-4 t-right col_w">
+              <label for="password">كلمة المرور</label>
+              <input
+                dir="rtl"
+                type="password"
+                class="form-control me-2"
+                id="password"
+                name="password"
+                placeholder="Password"
+                ngModel
+                required
+                minlength="6"
+              />
+            </div>
+            <button class="btn btn-block btn-reg" type="submit" [disabled]="!loginForm.valid">
+              تسجيل الدخول
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-4 tcenter">
+      <p class="boldf white">
+        ليس لديك حساب.
+        <a routerLink="/register"><span class="forgetPw_pink">سجل الأن</span></a>
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,211 @@
+<section class="first-section">
+  <div class="container">
+    <div class="col-md-12 mt-4 black text-center">
+      <h4 class="login-h">أنشئ ملفا تعريفيا لطفلك</h4>
+      <p class="title-p">ليتمكن من التحكم بدوراته بسهولة</p>
+    </div>
+    <div class="container main-cont">
+      <div class="col-md-6 mt-4 second-cont-parent black">
+        <div class="" style="text-align: right">
+          <form
+            [formGroup]="registerForm"
+            (ngSubmit)="onRegister(registerForm)"
+          >
+            <div class="col-12 image-upload">
+              <label for="photoUrl" class="mb-0" style="display: ruby">
+                <!-- image-pic -->
+                <div class="profile-pic mb-1" [ngStyle]="{backgroundImage:getImage()}"></div>
+                <i class="fa fa-plus pro-icon"></i>
+              </label>
+              <input
+                type="File"
+                name="photoUrl"
+                id="photoUrl"
+                formControlName="photoUrl"
+                (change)="onFileSelected($event)"
+              />
+            </div>
+
+            <div class="col-md-12 form-group first mb-3 col_b">
+              <label for="username">الاسم </label>
+              <input
+                dir="rtl"
+                type="text"
+                class="form-control input-s"
+                id="username"
+                placeholder="الاسم"
+                formControlName="username"
+                [ngClass]="{
+                  'is-invalid': f['username'].errors && f['username'].touched
+                }"
+              />
+              <div *ngIf="f['username'].errors" class="invalid-feedback">
+                <div *ngIf="f['username'].errors['required']">
+                  فضلا ادخل اسم مستخدم
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 form-group first t-right col_b">
+              <label>كلمة المرور</label>
+              <input
+                type="password"
+                formControlName="password"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': f['password'].errors && f['password'].touched
+                }"
+              />
+
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  f['password'].hasError('required') && f['password'].touched
+                "
+              >
+                كلمة المرور مطلوبة
+              </div>
+
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  f['password'].hasError('minlength') && f['password'].touched
+                "
+              >
+                كلمة المرور يجب ان تكون مكونة من 4 احرف على الأقل
+              </div>
+
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  f['password'].hasError('maxlength') && f['password'].touched
+                "
+              >
+                كلمة المرور يجب ان تكون مكونة من 4 احرف على الأكثر
+              </div>
+            </div>
+
+            <div class="col-md-12 form-group first t-right col_b">
+              <label>تأكيد كلمة المرور</label>
+              <input
+                type="password"
+                formControlName="confirmPassword"
+                class="form-control"
+                minlength="4"
+                [ngClass]="{
+                  'is-invalid':
+                    (f['confirmPassword'].errors &&
+                      f['confirmPassword'].touched) ||
+                    (f['confirmPassword'].touched &&
+                      registerForm.hasError('mismatch'))
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  f['confirmPassword'].hasError('required') &&
+                  f['confirmPassword'].touched
+                "
+              >
+                كلمة المرور مطلوبة
+              </div>
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  registerForm.hasError('mismatch') &&
+                  f['confirmPassword'].touched
+                "
+              >
+                يجب تطابق كلمة المرور
+              </div>
+            </div>
+            <div class="col-lg-12 col-12">
+              <div class="form-group mb-0 t-right col_b">
+                <label for="username"> تاريخ الولادة</label>
+                <div class="btn-div">
+                  <input
+                    dir=""
+                    type="text"
+                    name="dateOfBirth"
+                    class="form-control"
+                    formControlName="dateOfBirth"
+                    bsDatepicker
+                    [bsConfig]="bsConfig"
+                    style="width: 100%"
+                    [ngClass]="{
+                      'is-invalid':
+                        f['dateOfBirth'].errors && f['dateOfBirth'].touched
+                    }"
+                  />
+                  <div
+                    class="invalid-feedback"
+                    *ngIf="
+                      f['dateOfBirth'].touched &&
+                      f['dateOfBirth'].hasError('required')
+                    "
+                  >
+                    هذا الحقل مطلوب
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-12t-right col_b mt-2">
+              <label for="gender">جنس الطالبـ/ـة</label>
+              <div class="p-t-15 d-flex">
+                <label class="radio-container col-lg-6"
+                  >أنثى
+                  <input type="radio" value="female" formControlName="gender" />
+                  <!-- <span class="checkmark"></span> -->
+                </label>
+                <label class="radio-container col-lg-6"
+                  >ذكر
+                  <input
+                    type="radio"
+                    checked="checked"
+                    value="male"
+                    formControlName="gender"
+                  />
+                  <!-- <span class="checkmark"></span> -->
+                </label>
+              </div>
+            </div>
+            <!-- <div class="col-lg-12 col-12 mt-2 mb-2">
+              <div class="select-arrow p-rel">
+                <label for="classOrderId">الصف الدراسي الحالي</label>
+                <select
+                  name="classOrderId"
+                  id="classOrderId"
+                  formControlName="classOrderId"
+                >
+                  <option value="0" disabled selected>الصف</option>
+                  @for (item of this.classOrder; track $index) {
+                  <option [value]="item.id">{{ item.name }}</option>
+                  }
+                </select>
+              </div>
+            </div> -->
+            <div class="col-lg-12 col-12">
+              <div class="d-flex">
+                <button
+                  class="btn btn-block btn-reg"
+                  type="submit"
+                  [disabled]="!registerForm.valid"
+                >
+                  التالي
+                </button>
+              </div>
+            </div>
+            <a href="" class="black"
+              ><span class="footer-note"> سأكمل الحساب لاحقا </span></a
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-4 text-center">
+      <span class="footer-note"
+        >يمكن للمعلمات المشرفات على طفلك رؤية الملف التعريفي الخاص به ومتابعته
+      </span>
+    </div>
+  </div>
+</section>

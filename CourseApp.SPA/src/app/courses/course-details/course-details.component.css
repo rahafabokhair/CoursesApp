@@ -1,0 +1,204 @@
+.cor-event-sec {
+    padding: 20px 0 80px;
+}
+.cor-sec-header {
+    margin-top: 100px;
+    padding-top: 50px;
+    background-image: url("../../../../public/bg19.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.cor-sec-header h2{
+    font-family: "NeoSansMedium";
+    font-size: 22px;
+}
+
+.cor-sec-header p{
+    color: #fff;
+    text-align: right;
+    font-size: 18px;
+    margin: -20px 0 30px;
+    font-family: "NeoSansMedium";
+}
+
+
+.purple-car{
+    background-color: #56509f;
+    padding:10px 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+.purple-car p{
+    color: #fff !important;
+    direction: rtl;
+    font-family: "NeoSansMedium";
+}
+.purple-car span:first-of-type{
+    display: block;
+}
+.purple-car .big{
+    font-size: 22px;
+    font-family: "NeoSansMedium";
+}
+.ev-cart-div-right p {
+    color: #000;
+    font-size: 14px;
+    line-height: 2.5;
+}
+
+.courseTabs ::ng-deep .nav-tabs{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    min-width: 150px;
+    padding: 5px 0;
+    border-radius: 15px !important;
+    background-color: #ffdd00 ;
+}
+
+.courseTabs ::ng-deep .nav-link {
+    color: #56509f;
+    border-radius: 20px !important;
+    font-family: "NeoSansMedium" !important;
+    text-align: center;
+    border: none !important;
+    transition: all 0.4s ease-in-out;
+}
+
+.courseTabs ::ng-deep .nav-link:hover,
+.courseTabs ::ng-deep .nav-link.active {
+    color: #ffff !important;
+    background-color: #FF6682 !important;
+    border: none !important;
+}
+
+.courseTabs ::ng-deep .nav-item {
+    min-width: 100px;
+    margin: 0 15px;
+    color: #ffff;
+}
+.courseTabs ::ng-deep .tab-content {
+    text-align: right;
+}
+
+
+.det-card{
+    margin-top: 40px;
+    height: 130px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 1px 0px 8px #00000020;
+    padding: 5px;
+}
+.det-card p{
+    margin-bottom: 0;
+    font-family: "NeoSansMedium";
+    padding: 0 12px;
+    line-height: 28px;
+}
+.det-card p:first-of-type{
+    margin-top: 8px;
+}
+
+.det-img{
+    border-radius: 30px;
+    width: 60px;
+    height: 59px;
+    background: #ff6682;
+    padding: 13px;
+    margin-top: -30px;
+    margin: -28px auto 0;
+}
+.det-img img{
+    width: 100%;
+}
+
+
+.ev-cart-div-left {
+    font-size: 12px;
+    text-align: right;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 9px;
+    font-family: "NeoSansMedium";
+    background: #fbfcfc;
+}
+
+.recent-event-sub {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.recent-event-sub img {
+    width: 57px;
+    margin-left: 10px;
+}
+
+.recent-event-sub p {
+    margin: 0;
+    font-family: "NeoSansMedium";
+}
+.recent-event-sub .red{
+font-family: "NeoSanRegular";
+}
+.recent-event-sub-hr {
+    width: 95%;
+}
+.dir-rtl{
+    direction: rtl;
+}
+
+
+.top-purple {
+    background-color: #56509f;
+    padding:10px 20px;
+    border-radius: 20px;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.top-purple>.d-flex{
+    margin: 10px 0;
+}
+.top-purple img {
+    width: 20px;
+    margin: 0 10px;
+}
+.top-purple h4 {
+    font-size: 12px;
+    text-align: right;
+    margin-bottom: 5px;
+    color: #fff;
+    min-width: 105px;
+}
+.top-purple p {
+    font-family: "NeoSansMedium" !important;
+    font-size: 14px;
+    margin-bottom: 0;
+    text-align: right;
+    color: #fff;
+    min-width: 105px;
+}
+
+.text-noraml{
+    font-family: 'NeoSansRegular';
+}
+.text-right{
+    text-align: right;
+}
+@media (max-width: 768px) {
+.courseTabs   ::ng-deep .nav-item {
+        margin: 0px;
+        font-size: 14px;
+        padding: 0;
+        display: block;
+        background-color: #ffdd00;
+        width: 100%;
+        border-radius: 15px !important;
+    }
+}

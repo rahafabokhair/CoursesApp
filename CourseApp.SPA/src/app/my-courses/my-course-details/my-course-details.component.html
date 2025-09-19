@@ -1,0 +1,66 @@
+<!-- start -->
+<section class="container section-courses my-courses-sec">
+  <div>
+    <tabset class="courseTabs">
+      <tab heading="الدرس">
+        <div class="row f-rev">
+          <div class="col-md-6 courses mt-3">
+            <div class="my-courses-card wow fadeInUp" data-wow-duration="1.4s">
+              <div class="d-flex flex-row">
+                <img [src]="course.photoUrl" alt="photo" class="details-img" />
+                <div class="details">
+                  <h5 class="p-2 red">المجموعة 16</h5>
+                  <p class="my-auto p-2">
+                    <img src="../start.png" alt="photo" class="" /> الدورة:
+                    <span> {{course.name}}</span>
+                    <br />
+                    <img
+                      src="../Remaining days to start lessons.png"
+                      alt="photo"
+                      class=""
+                    />المستوى:
+                    <span>{{course.level}}</span>
+                    <br />
+                    <img src="../class.png" alt="photo" class="" /> الأنسة
+                    :<span>{{course.teacherName}}</span>
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="my-4">
+                <div class="progress align-items-center mt-2 circle">
+                  <div
+                    class="progress-bar"
+                    style="width: 65%"
+                    aria-valuenow="65"
+                    aria-valuemin="0"
+                    aria-valuemax="100 "
+                  ></div>
+                  <div class="d-flex align-items center rounded-circle">
+                    <span class="label my-auto mx-auto label">65%</span>
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div class="btns-card-details">
+                    <a href="">
+                      <button class="bg-red">
+                        <img src="../reading-book.png">
+                        دليل الطالب
+                      </button>
+                    </a>
+                    <a href="">
+                      <button class="bg-purple">
+                        <img src="../Parent_s guide.png">
+                        دليل الوالدين
+                      </button>
+                    </a>
+                  </div> -->
+            </div>
+          </div>
+        </div>
+      </tab>
+      <tab heading="دليل الطالب"> ... </tab>
+      <tab heading="دليل الوالدين"> ... </tab>
+    </tabset>
+  </div>
+  <!-- end -->
+</section>

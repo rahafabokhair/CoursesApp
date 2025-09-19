@@ -1,0 +1,84 @@
+<!--header-->
+<div class="headerTop"></div>
+<header id="header" class="fixed-top">
+  <div class="container header2">
+    <div class="logo">
+      <a href="index.html">
+      <img src="../logo/logo.svg" alt="logo" class="h-logo"/>
+    </a>
+    </div>
+
+    <nav class="main-nav float-right d-none d-lg-block">
+      <ul class="menu-list">
+        <!-- <li class="activeMenuTab">
+          <a href="index.html">
+            <p class="menu-p">الرئيسية</p>
+          </a>
+        </li> -->
+        <!-- <li class="">
+          <a>
+            <p class="menu-p">
+              <span> من نحن </span>
+            </p>
+          </a>
+        </li> -->
+        <li class="">
+          <a routerLink="courses">
+            <p class="menu-p">
+              <span> دوراتنا </span>
+            </p>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="#">
+            <p class="menu-p">الفعاليات</p>
+          </a>
+        </li>
+    
+        <li class="">
+          <a href="">
+            <p class="menu-p">الدليل ومعايير القبول</p>
+          </a>
+        </li> -->
+
+        <li class="top-menu-btn mr-70" *ngIf="!loggedin()">
+          <a routerLink="register">
+            <p>إنشاء حساب</p>
+          </a>
+        </li>
+        <li class="top-menu-btn">
+          <a class="signUp" routerLink="login" *ngIf="!loggedin()">
+            <p>تسجيل الدخول</p>
+          </a>
+        </li>
+        <li class="top-menu-btn mr-70" *ngIf="loggedin()">
+          
+            <div class="user-div">
+              <!-- <i class="fa fa-caret-down"></i> -->
+              <!-- <span> {{ authService.decodedToken?.unique_name|titlecase | firstname }} </span> -->
+             <span><img [src]="imageUrl||defaultImg" ></span>
+              <i class="fa fa-check"></i>
+            </div>
+         
+        </li>
+      
+        <li class="top-menu-btn" *ngIf="loggedin()">
+          <a class="signUp" routerLink="myCourses">
+            <p>
+              دوراتي
+              <img src="../Online course.png" alt="icon" class="ml-1" />
+            </p>
+          </a>
+        </li>
+          <li class="top-menu-btn mobile-hide" *ngIf="loggedin()">
+          <a class="icon-menu" (click)="logout()">
+            <p>logout</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- .main-nav -->
+</header>
+<!--header end-->

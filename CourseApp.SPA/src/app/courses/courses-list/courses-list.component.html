@@ -1,0 +1,73 @@
+<section class="container section-courses">
+  <div class="text-center">
+    <img src="../courses.png" class="blog-icon" /><br />
+    <h2 class="mb-4 mt-3">الدورات</h2>
+  </div>
+  <!-- start -->
+  <div>
+    <tabset class="courseTabs">
+      <div *ngIf="courses.length <= 0">
+        <p>No courses yet</p>
+      </div>
+      <tab
+        *ngFor="let category of courseCategory"
+        heading="{{ category.name }}"
+        (selectTab)="onTabSelect(category)"
+      >
+        <div class="row f-rev">
+          <div class="col-md-4" *ngFor="let course of courses">
+            <a [routerLink]="[course.id]">
+              <div class="card card wow fadeInUp" data-wow-duration="1.4s">
+                <img [src]="course.photoUrl" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <img src="../flag.png" alt="" class="flag" />
+                    {{ course.name }}
+                  </h5>
+                  <p class="text1 card-text">
+                    {{ course.description }}
+                  </p>
+                  <div class="p1">
+                    <div class="d-flex f-rev">
+                      <p>العمر</p>
+                      <p>المستوى</p>
+                      <p>عدد المقاعد</p>
+                    </div>
+                  </div>
+                  <div class="p2">
+                    <div class="d-flex f-rev">
+                      <p class="red">
+                        {{ course.studentAgeFrom }}-{{ course.studentAgeTo }}
+                        سنوات
+                      </p>
+                      <p class="red">{{ course.level }}</p>
+                      <p class="red">{{ course.seatsNumber }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+  <!-- end -->
+  <div
+    class="d-flex justify-content-center"
+    *ngIf="pagination && courses.length > 0"
+  >
+    <pagination
+      [boundaryLinks]="true"
+      [totalItems]="pagination.totalItems"
+      [itemsPerPage]="pagination.itemsPerPage"
+      [(ngModel)]="pagination.currentPage"
+      (pageChanged)="pageChanged($event)"
+      previousText="&lsaquo;"
+      nextText="&rsaquo;"
+      firstText="&laquo;"
+      lastText="&raquo;"
+    >
+    </pagination>
+  </div>
+</section>

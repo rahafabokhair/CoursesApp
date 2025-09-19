@@ -1,0 +1,185 @@
+
+.section-courses{
+    overflow: hidden;
+    padding: 120px 0 50px;
+}
+.section-courses h2 {
+    color: #56509f;
+}
+.blog-sec2,
+.what-sec {
+    padding: 50px 0;
+}
+
+.courseTabs ::ng-deep .nav-tabs{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    min-width: 150px;
+    padding: 5px 0;
+    border-radius: 15px !important;
+    background-color: #ffdd00 ;
+}
+
+.courseTabs ::ng-deep .nav-link {
+    color: #56509f;
+    border-radius: 20px !important;
+    font-family: "NeoSansMedium" !important;
+    text-align: center;
+    border: none !important;
+    transition: all 0.4s ease-in-out;
+}
+
+.courseTabs ::ng-deep .nav-link:hover,
+.courseTabs ::ng-deep .nav-link.active {
+    color: #ffff !important;
+    background-color: #FF6682 !important;
+    border: none !important;
+}
+
+.courseTabs ::ng-deep .nav-item {
+    min-width: 100px;
+    margin: 0 15px;
+    color: #ffff;
+}
+.courseTabs ::ng-deep .tab-content {
+    text-align: right;
+}
+.container.card {
+    border-radius: 24px;
+}
+.card-title {
+    color: #56509f;
+    font-size: 15px;
+    font-family: "NeoSansMedium" !important;
+    font-weight: 400;
+}
+.card-body .card-text {
+    font-weight: 400;
+    font-family: "NeoSansMedium" !important;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #666;
+}
+.container .text {
+    font-weight: 200;
+    font-size: 15px;
+    margin-top: 20px;
+    color: #666;
+    border-radius: 20px;
+    background-color: #fafbfc;
+    padding: 30px 50px;
+    /* margin: 20px -40px; */
+    text-align: justify !important;
+    direction: rtl;
+    line-height: 35px;
+}
+a{text-decoration: none;}
+.card {
+    border-radius: 30px;
+    margin-bottom: 35px;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+    margin:15px;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #00000020;
+    transform: scale(1.01);
+}
+
+.card-title {
+    color: #56509f;
+    font-size: 15px;
+    font-family: "NeoSansMedium" !important;
+    font-weight: 400;
+    text-align: right;
+    direction: rtl;
+}
+.card-img-top {
+    width: 100%;
+    height: 200px;
+}
+.card .new-course{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 200px;
+}
+.card-text {
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #666;
+    height: 58px;
+    overflow-y: auto;
+    direction: rtl;
+    text-align: justify;
+}
+
+h2,
+.what-sec h2 {
+    color: #56509f;
+    font-family: "NeoSansMedium" !important;
+    font-size: 24px;
+}
+.blog-icon,
+.what-sec .what-icon {
+    margin: auto;
+}
+
+.courses-card .card {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+}
+.courses-card .card img {
+    width: 100%;
+    height: 100%;
+}
+.d_flex {
+    display: flex;
+}
+.p1 {
+    padding: 10px 0;
+    border-top: rgb(240, 234, 234) solid 2px;
+    color: #495057;
+    font-size: 11px;
+    font-family: "NeoSansMedium" !important;
+}
+.p2 {
+    color: #e57373;
+    font-size: 11px;
+    font-family: "NeoSansMedium" !important;
+}
+.p1 p , .p2 p{
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    flex-basis: 0;
+    font-size: 12px;
+}
+.container .pages-num {
+    border-radius: 20px;
+    text-align: center;
+    background-color: #fafbfc;
+}
+.container .pages-num :hover,
+.container .pages-num :active {
+    background-color: #e57373;
+    color: #ffff;
+}
+
+@media (max-width: 768px) {
+.courseTabs   ::ng-deep .nav-item {
+        margin: 0px;
+        font-size: 14px;
+        padding: 0;
+        display: block;
+        background-color: #ffdd00;
+        width: 100%;
+        border-radius: 15px !important;
+    }
+}

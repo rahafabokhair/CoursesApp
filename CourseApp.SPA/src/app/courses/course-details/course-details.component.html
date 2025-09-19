@@ -1,0 +1,198 @@
+<section class="cor-sec-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 style="color: #fff; text-align: right; margin: 32px 0">
+          {{ course.name }}
+        </h2>
+        <p>{{ course.level }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cor-event-sec mb-2">
+  <div class="container">
+    <div class="row f-rev justify-content-between">
+      <div class="col-md-8 col-12 pb-2 ev-cart-div-right">
+        <div class="top-purple m-0">
+          <div class="d-flex f-rev">
+            <img src="../Age.png" alt="" />
+            <div>
+              <h4>العمر</h4>
+              <p>{{ course.studentAgeFrom }}-{{ course.studentAgeTo }} سنوات</p>
+            </div>
+          </div>
+          <div class="d-flex f-rev">
+            <img src="../Course Level-1.png" alt="" />
+            <div>
+              <h4>مستوى الدورة</h4>
+              <p>{{ course.level }}</p>
+            </div>
+          </div>
+          <div class="d-flex f-rev">
+            <img src="../Icon ionic-md-time-2.png" alt="" />
+            <div>
+              <h4>عدد المقاعد</h4>
+              <p class="d-rtl">
+                <span>كحدأقصى</span>
+                {{ course.seatsNumber }}
+              </p>
+            </div>
+          </div>
+          <div class="d-flex f-rev">
+            <img src="../price.png" alt="" />
+            <div>
+              <h4>السعر</h4>
+              <p>TL{{ course.price }}</p>
+            </div>
+          </div>
+          <button
+            class="btn btn-red btn-sp"
+            (click)="subscribeCourse(course.id)"
+          >
+            اشترك الآن
+          </button>
+        </div>
+        <div class="row f-rev justify-content-between">
+          <div class="col-md-8 text-right">
+            <p class="p-j mt-3">
+              {{ course.description }}
+            </p>
+          </div>
+          <div class="col-md-12 courseTabs">
+            <div class="tabs-bg">
+              <div class="">
+                <tabset  #courseDetailsTabs class="courseTabs">
+                  <tab heading="تفاصيل الدورة">
+                    <div class="row f-rev">
+                      <div class="col-md-4">
+                        <div class="det-card">
+                          <div class="det-img">
+                            <img src="../calendar1.png" alt="icon" />
+                          </div>
+                          <p class="red">مدة الدورة</p>
+                         <p class="purple">{{course.duration}} </p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="det-card">
+                          <div class="det-img">
+                            <img src="../calendar (1).png" alt="icon" />
+                          </div>
+                          <p class="red">عدد الدروس</p>
+                          <p class="purple">{{this.course.schedules.length}}حصص في الأسبوع</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="det-card">
+                          <div class="det-img">
+                            <img src="../calendar (1).png" alt="icon" />
+                          </div>
+                          <p class="red">مدة الدرس</p>
+                          <p class="purple">{{course.lessonDuration}}: دقيقة</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="det-card">
+                          <div class="det-img">
+                            <img src="../calendar (1).png" alt="icon" />
+                          </div>
+                          <p class="red">عدد الطلاب في المجموعة</p>
+                          <p class="purple">{{course.seatsNumber}}</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4" *ngIf="course.license">
+                        <div class="det-card">
+                          <div class="det-img">
+                            <img src="../calendar (1).png" alt="icon" />
+                          </div>
+                          <p class="red">الشهادة</p>
+                          <p class="purple" >
+                            شهادة في نهاية كل مستوى من الدورة
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </tab>
+               
+
+                  <!-- <tab heading="شروط الالتزام">
+                    <h4>...</h4>
+                  </tab> -->
+                </tabset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 dir-rtl">
+        <div class="ev-cart-div-left mb-3">
+          <p>
+            <i class="fas fa-link"></i> رابط:<span class="red"
+              ><a>www..com</a></span
+            >
+          </p>
+          <p>
+            <img src="./Icon ionic-ios-calendar.png" width=" 10px" />
+            تاريخ:<span>{{ course.startDate | date }} </span>
+          </p>
+          <p>
+            <img src="./Icon ionic-md-time.png" width=" 10px" />
+            توقيت:<span>08:00 AMبتوقيت اسطنبول </span>
+          </p>
+        </div>
+
+        <!-- <div class="ev-cart-div-left">
+          <h6 class="purple mb-3">آخر الأحداث</h6>
+          <a href="">
+            <div class="recent-event-sub">
+              <div>
+                <img src="./../card4.png" alt="" />
+              </div>
+              <div>
+                <p class="red"><i class="fas fa-child"></i> 06/06/2021</p>
+                <p class="black">اللغة العربية</p>
+              </div>
+            </div>
+          </a>
+          <hr class="recent-event-sub-hr" />
+          <a href="">
+            <div class="recent-event-sub">
+              <div>
+                <img src="./../card4.png" alt="" />
+              </div>
+              <div>
+                <p class="red"><i class="fas fa-child"></i> 06/06/2021</p>
+                <p class="black">اللغة العربية</p>
+              </div>
+            </div>
+          </a>
+          <hr class="recent-event-sub-hr" />
+          <a href="">
+            <div class="recent-event-sub">
+              <div>
+                <img src="./../card4.png" alt="" />
+              </div>
+              <div>
+                <p class="red"><i class="fas fa-child"></i> 06/06/2021</p>
+                <p class="black">اللغة العربية</p>
+              </div>
+            </div>
+          </a>
+          <hr class="recent-event-sub-hr" />
+          <a href="">
+            <div class="recent-event-sub">
+              <div>
+                <img src="./../card4.png" alt="" />
+              </div>
+              <div>
+                <p class="red"><i class="fas fa-child"></i> 06/06/2021</p>
+                <p class="black">اللغة العربية</p>
+              </div>
+            </div>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>

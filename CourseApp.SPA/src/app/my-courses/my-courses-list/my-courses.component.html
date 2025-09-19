@@ -1,0 +1,64 @@
+<section class="my-courses-sec">
+  <div class="breadcrumbs">
+    <div class="container"><a href="/index.html"> الرئيسية </a> > دوراتي</div>
+  </div>
+<div class="text-center" *ngIf="myCourses.length <=0">
+<h5>اشترك بأحد الدورات</h5>
+</div>
+  <div class="container">
+    <div class="courses">
+      <div class="row">
+        @for (item of myCourses; track $index) {
+
+        <div class="col-md-6" [routerLink]="[item.id]" style="cursor: pointer">
+          <div class="my-courses-card wow fadeInUp" data-wow-duration="1.4s">
+            <div class="d-flex flex-row">
+              <img [src]="item.photoUrl" class="details-img" />
+              <div class="details">
+                <h5 class="p-2">المجموعة 16</h5>
+                <p class="my-auto p-2">
+                  <img src="../start.png" alt="photo" class="" /> نوع الدورة:
+                  <span
+                    >{{ item.courseCategoryId | categoryName : courseCategory }}
+                  </span>
+                  <br />
+                  <img
+                    src="../Remaining days to start lessons.png"
+                    alt="photo"
+                    class=""
+                  />المستوى: <span> {{ item.level }}</span>
+                  <br />
+                  <img src="../class.png" alt="photo" class="" /> عدد الطلاب
+                  :<span>{{ item.seatsNumber }}</span>
+                  <br />
+                  <img src="../time.png" alt="photo" class="" /> الدرس التالي:
+                  <span>اليوم</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        }
+      </div>
+    </div>
+  </div>
+  <div
+    class="d-flex justify-content-center"
+    *ngIf="pagination && myCourses.length > 0"
+  >
+    <pagination
+      [boundaryLinks]="true"
+      [totalItems]="pagination.totalItems"
+      [itemsPerPage]="pagination.itemsPerPage"
+      [(ngModel)]="pagination.currentPage"
+      (pageChanged)="pageChanged($event)"
+      previousText="&lsaquo;"
+      nextText="&rsaquo;"
+      firstText="&laquo;"
+      lastText="&raquo;"
+    >
+    </pagination>
+  </div>
+ 
+</section>
